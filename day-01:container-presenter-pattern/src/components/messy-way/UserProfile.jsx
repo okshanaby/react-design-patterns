@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const UserProfile = ({ userId }) => {
+  console.log("🚀 ~ UserProfile ~ userId:", userId)
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ const UserProfile = ({ userId }) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL}/users/${userId}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/users/${userId}`
       );
       setUser(response.data);
       setFormData({
@@ -36,7 +37,7 @@ const UserProfile = ({ userId }) => {
   const fetchUserPosts = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL}/users/${userId}/posts`
+        `${import.meta.env.VITE_API_BASE_URL}/api/users/${userId}/posts`
       );
       setPosts(response.data);
     } catch (err) {
@@ -47,7 +48,7 @@ const UserProfile = ({ userId }) => {
   const handleSaveProfile = async () => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_API_BASE_URL}/users/${userId}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/users/${userId}`,
         formData
       );
       setUser(response.data);
