@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 const UserProfile = ({ userId }) => {
-  console.log("🚀 ~ UserProfile ~ userId:", userId)
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -146,6 +146,10 @@ const UserProfile = ({ userId }) => {
       </div>
     </div>
   );
+};
+
+UserProfile.propTypes = {
+  userId: PropTypes.number.isRequired,
 };
 
 export default UserProfile;

@@ -1,10 +1,9 @@
-import "./App.css";
-import UserProfile from "./components/messy-way/UserProfile";
+import ContainerPresenterPattern from "./day-01:container-presenter-pattern/ContainerPresenterPattern";
 
 function App() {
   return (
     <div>
-      <UserProfile userId={1} />
+      <ContainerPresenterPattern />
     </div>
   );
 }
