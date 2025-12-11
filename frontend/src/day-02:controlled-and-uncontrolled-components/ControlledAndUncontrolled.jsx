@@ -3,7 +3,9 @@ import "./App.css";
 // import Counter from "./state-vs-ref/components/Counter";
 // import CounterWithRef from "./state-vs-ref/components/CounterWithRef";
 // import FeedbackForm from "./with-no-pattern/FeedbackForm";
-import ControlledFeedbackForm from "./with-controlled-pattern/ControlledFeedbackForm";
+// import ControlledFeedbackForm from "./with-controlled-pattern/ControlledFeedbackForm";
+import UncontrolledFeedbackForm from "./with-uncontrolled-pattern/UncontrolledFeedbackForm";
+import UncontrolledFormNoRef from "./with-uncontrolled-pattern/UncontrolledFormNoRef";
 
 const ControlledAndUncontrolled = () => {
   return (
@@ -12,7 +14,9 @@ const ControlledAndUncontrolled = () => {
       <AutoFocusInput />
       <CounterWithRef /> */}
       {/* <FeedbackForm /> */}
-      <ControlledFeedbackForm />
+      {/* <ControlledFeedbackForm /> */}
+      <UncontrolledFeedbackForm />
+      <UncontrolledFormNoRef />
     </div>
   );
 };
