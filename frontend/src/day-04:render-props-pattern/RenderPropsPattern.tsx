@@ -1,12 +1,12 @@
 import React from "react";
-import MouseTracker from "./with-pattern/MouseTracker";
+import MouseTrackerWithChildren from "./with-pattern/MouseTrackerWithChildren";
 
 const RenderPropsPattern = () => {
   return (
     <div className="w-full h-screen flex flex-col gap-10">
       {/* <CarTracker />
       <BikeTracker /> */}
-      <MouseTracker
+      {/* <MouseTracker
         render={(position) => (
           <div>
             Car Tracker Position: {position.x}, {position.y}
@@ -19,7 +19,17 @@ const RenderPropsPattern = () => {
             Bike Tracker Position: {position.x}, {position.y}
           </div>
         )}
-      />
+      /> */}
+      <MouseTrackerWithChildren>
+        {() => <div>Car Tracker Position:</div>}
+      </MouseTrackerWithChildren>
+      <MouseTrackerWithChildren>
+        {(position) => (
+          <div>
+            Bike Tracker Position: {position?.x}, {position?.y}
+          </div>
+        )}
+      </MouseTrackerWithChildren>
     </div>
   );
 };
