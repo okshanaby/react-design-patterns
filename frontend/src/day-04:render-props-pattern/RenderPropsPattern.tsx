@@ -1,12 +1,25 @@
 import React from "react";
-import CarTracker from "./with-no-pattern/CarTracker";
-import BikeTracker from "./with-no-pattern/BikeTracker";
+import MouseTracker from "./with-pattern/MouseTracker";
 
 const RenderPropsPattern = () => {
   return (
     <div className="w-full h-screen flex flex-col gap-10">
-      <CarTracker />
-      <BikeTracker />
+      {/* <CarTracker />
+      <BikeTracker /> */}
+      <MouseTracker
+        render={(position) => (
+          <div>
+            Car Tracker Position: {position.x}, {position.y}
+          </div>
+        )}
+      />
+      <MouseTracker
+        render={(position) => (
+          <div>
+            Bike Tracker Position: {position.x}, {position.y}
+          </div>
+        )}
+      />
     </div>
   );
 };
